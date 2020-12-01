@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jets"
-
+ruby '2.5.3'
 
 gem "dynomite"
 
