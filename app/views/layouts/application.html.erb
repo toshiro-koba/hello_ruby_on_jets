@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ImageFalling</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <style type="text/css" media="screen" charset="utf-8">
+      body {
+        overflow: hidden;
+      }
+
+      div.at-container {
+        display: flex;
+        height: 100%;
+      }
+      .at-item {
+        height: 100px;
+        /* background-color:#ffe672; */
+        animation-name: slide-in-top;
+        animation-timing-function: ease-out;
+        /* animation-delay: 0s; */
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        position: absolute;
+        bottom: -102px;
+        left: 100px;
+      }
+
+      .ani-option0 {
+        left: 200px;
+        animation-delay: 0s;
+        animation-duration: 6.0s;
+        z-index: 10;
+      }
+
+      .size-option0 {
+        width: 200px;
+      }
+
+      .ani-option1 {
+        left: 1000px;
+        animation-delay: 0.5s;
+        animation-duration: 6.0s;
+        z-index: 10;
+      }
+
+      .size-option1 {
+        width: 200px;
+      }
+
+      .ani-option2 {
+        left: 900px;
+        animation-delay: 0.7s;
+        animation-duration: 6.5s;
+        z-index: 9;
+      }
+
+      .size-option2 {
+        width: 160px;
+      }
+
+      .ani-option3 {
+        left: 100px;
+        animation-delay: 1.0s;
+        animation-duration: 7.0s;
+        z-index: 9;
+      }
+
+      .size-option3 {
+        width: 140px;
+      }
+
+      .ani-option4 {
+        left: 600px;
+        animation-delay: 1.8s;
+        animation-duration: 6.5s;
+        z-index: 9;
+      }
+
+      .size-option4 {
+        width: 160px;
+      }
+
+      .ani-option5 {
+        left: 300px;
+        animation-delay: 2.5s;
+        animation-duration: 6.0s;
+        z-index: 8;
+      }
+
+      .size-option5 {
+        width: 200px;
+      }
+
+      .ani-option6 {
+        left: 800px;
+        animation-delay: 2.7s;
+        animation-duration: 6.0s;
+      }
+
+      .size-option6 {
+        width: 200px;
+        z-index: 8;
+      }
+
+      .ani-option7 {
+        left: 450px;
+        animation-delay: 2.9s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option7 {
+        width: 200px;
+      }
+
+      .ani-option8 {
+        left: 350px;
+        animation-delay: 3.1s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option8 {
+        width: 140px;
+      }
+
+      .ani-option9 {
+        left: 900px;
+        animation-delay: 3.3s;
+        animation-duration: 7.0s;
+      }
+
+      .size-option9 {
+        width: 140px;
+        z-index: 8;
+      }
+
+      .ani-option10 {
+        left: 100px;
+        animation-delay: 3.5s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option10 {
+        width: 200px;
+      }
+
+      .ani-option11 {
+        left: 400px;
+        animation-delay: 3.6s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option11 {
+        width: 160px;
+      }
+
+      .ani-option12 {
+        left: 550px;
+        animation-delay: 3.8s;
+        animation-duration: 6.0s;
+      }
+
+      .size-option12 {
+        width: 200px;
+        z-index: 8;
+      }
+
+      .ani-option13 {
+        left: 0px;
+        animation-delay: 4.0s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option13 {
+        width: 200px;
+      }
+
+      .ani-option14 {
+        left: 800px;
+        animation-delay: 4.3s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option14 {
+        width: 140px;
+      }
+
+      .ani-option15 {
+        left: 600px;
+        animation-delay: 4.4s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option15 {
+        width: 160px;
+      }
+
+      .ani-option16 {
+        left: 200px;
+        animation-delay: 4.7s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option16 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option17 {
+        left: 700px;
+        animation-delay: 5.1s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option17 {
+        width: 200px;
+      }
+
+      .ani-option18 {
+        left: 400px;
+        animation-delay: 5.5s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option18 {
+        width: 140px;
+      }
+
+      .ani-option19 {
+        left: 300px;
+        animation-delay: 5.7s;
+        animation-duration: 6.0s;
+        z-index: 6;
+      }
+
+      .size-option19 {
+        width: 200px;
+      }
+
+      .ani-option20 {
+        left: 800px;
+        animation-delay: 6.0s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option20 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option21 {
+        left: 100px;
+        animation-delay: 6.1s;
+        animation-duration: 6.5s;
+        z-index: 7;
+      }
+
+      .size-option21 {
+        width: 160px;
+      }
+
+      .ani-option22 {
+        left: 400px;
+        animation-delay: 6.4s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option22 {
+        width: 140px;
+      }
+
+      .ani-option23 {
+        left: 300px;
+        animation-delay: 6.7s;
+        animation-duration: 7.0s;
+        z-index: 7;
+      }
+
+      .size-option23 {
+        width: 140px;
+      }
+
+      .ani-option24 {
+        left: 600px;
+        animation-delay: 7.0s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option24 {
+        width: 140px;
+      }
+
+      .ani-option25 {
+        left: 900px;
+        animation-delay: 7.2s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option25 {
+        width: 140px;
+      }
+
+      .ani-option26 {
+        left: 200px;
+        animation-delay: 7.5s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option26 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option27 {
+        left: 700px;
+        animation-delay: 7.8s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option27 {
+        width: 200px;
+      }
+
+      .ani-option28 {
+        left: 400px;
+        animation-delay: 8.0s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option28 {
+        width: 160px;
+      }
+
+      .ani-option29 {
+        left: 150px;
+        animation-delay: 8.2s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option29 {
+        width: 140px;
+      }
+
+      .ani-option30 {
+        left: 100px;
+        animation-delay: 8.5s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option30 {
+        width: 200px;
+      }
+
+      .ani-option31 {
+        left: 400px;
+        animation-delay: 8.8s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option31 {
+        width: 160px;
+      }
+
+      .ani-option32 {
+        left: 550px;
+        animation-delay: 9.1s;
+        animation-duration: 6.0s;
+      }
+
+      .size-option32 {
+        width: 200px;
+        z-index: 8;
+      }
+
+      .ani-option33 {
+        left: 300px;
+        animation-delay: 9.3s;
+        animation-duration: 7.0s;
+        z-index: 7;
+      }
+
+      .size-option33 {
+        width: 140px;
+      }
+
+      .ani-option34 {
+        left: 600px;
+        animation-delay: 9.6s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option34 {
+        width: 140px;
+      }
+
+      .ani-option35 {
+        left: 900px;
+        animation-delay: 9.9s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option35 {
+        width: 140px;
+      }
+
+      .ani-option36 {
+        left: 200px;
+        animation-delay: 10.2s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option36 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option37 {
+        left: 300px;
+        animation-delay: 10.5s;
+        animation-duration: 6.0s;
+        z-index: 6;
+      }
+
+      .size-option37 {
+        width: 200px;
+      }
+
+      .ani-option38 {
+        left: 800px;
+        animation-delay: 10.8s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option38 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option39 {
+        left: 100px;
+        animation-delay: 11.1s;
+        animation-duration: 6.5s;
+        z-index: 7;
+      }
+
+      .size-option39 {
+        width: 160px;
+      }
+
+      .ani-option40 {
+        left: 400px;
+        animation-delay: 11.4s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option40 {
+        width: 140px;
+      }
+
+      .ani-option41 {
+        left: 300px;
+        animation-delay: 11.7s;
+        animation-duration: 7.0s;
+        z-index: 7;
+      }
+
+      .size-option41 {
+        width: 140px;
+      }
+
+      .ani-option42 {
+        left: 550px;
+        animation-delay: 12s;
+        animation-duration: 6.0s;
+      }
+
+      .size-option42 {
+        width: 200px;
+        z-index: 8;
+      }
+
+      .ani-option43 {
+        left: 0px;
+        animation-delay: 12.3s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option43 {
+        width: 200px;
+      }
+
+      .ani-option44 {
+        left: 800px;
+        animation-delay: 12.6s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option44 {
+        width: 140px;
+      }
+
+      .ani-option45 {
+        left: 600px;
+        animation-delay: 12.9s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option45 {
+        width: 160px;
+      }
+
+      .ani-option46 {
+        left: 200px;
+        animation-delay: 13.2s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option46 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option47 {
+        left: 700px;
+        animation-delay: 13.5s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option47 {
+        width: 200px;
+      }
+
+      .ani-option48 {
+        left: 400px;
+        animation-delay: 13.8s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option48 {
+        width: 140px;
+      }
+
+      .ani-option49 {
+        left: 300px;
+        animation-delay: 14.1s;
+        animation-duration: 6.0s;
+        z-index: 6;
+      }
+
+      .size-option49 {
+        width: 200px;
+      }
+
+      .ani-option50 {
+        left: 800px;
+        animation-delay: 14.4s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option50 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option51 {
+        left: 100px;
+        animation-delay: 14.7s;
+        animation-duration: 6.5s;
+        z-index: 7;
+      }
+
+      .size-option51 {
+        width: 160px;
+      }
+
+      .ani-option52 {
+        left: 400px;
+        animation-delay: 15s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option52 {
+        width: 140px;
+      }
+
+      .ani-option53 {
+        left: 300px;
+        animation-delay: 15.3s;
+        animation-duration: 7.0s;
+        z-index: 7;
+      }
+
+      .size-option53 {
+        width: 140px;
+      }
+
+      .ani-option54 {
+        left: 600px;
+        animation-delay: 15.6s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option54 {
+        width: 140px;
+      }
+
+      .ani-option55 {
+        left: 900px;
+        animation-delay: 15.9s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option55 {
+        width: 140px;
+      }
+
+      .ani-option56 {
+        left: 200px;
+        animation-delay: 16.2s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option56 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option57 {
+        left: 700px;
+        animation-delay: 16.5s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option57 {
+        width: 200px;
+      }
+
+      .ani-option58 {
+        left: 400px;
+        animation-delay: 16.8s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option58 {
+        width: 160px;
+      }
+
+      .ani-option59 {
+        left: 150px;
+        animation-delay: 17.1s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option59 {
+        width: 140px;
+      }
+
+      .ani-option60 {
+        left: 100px;
+        animation-delay: 17.3s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option60 {
+        width: 200px;
+      }
+
+      .ani-option61 {
+        left: 400px;
+        animation-delay: 17.6s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option61 {
+        width: 160px;
+      }
+
+      .ani-option62 {
+        left: 550px;
+        animation-delay: 17.9s;
+        animation-duration: 6.0s;
+      }
+
+      .size-option62 {
+        width: 200px;
+        z-index: 8;
+      }
+
+      .ani-option63 {
+        left: 300px;
+        animation-delay: 18.2s;
+        animation-duration: 7.0s;
+        z-index: 7;
+      }
+
+      .size-option63 {
+        width: 140px;
+      }
+
+      .ani-option64 {
+        left: 600px;
+        animation-delay: 18.5s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option64 {
+        width: 140px;
+      }
+
+      .ani-option65 {
+        left: 900px;
+        animation-delay: 18.8s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option65 {
+        width: 140px;
+      }
+
+      .ani-option66 {
+        left: 200px;
+        animation-delay: 19.1s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option66 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option67 {
+        left: 300px;
+        animation-delay: 19.4s;
+        animation-duration: 6.0s;
+        z-index: 6;
+      }
+
+      .size-option67 {
+        width: 200px;
+      }
+
+      .ani-option68 {
+        left: 800px;
+        animation-delay: 19.7s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option68 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option69 {
+        left: 100px;
+        animation-delay: 20.0s;
+        animation-duration: 6.5s;
+        z-index: 7;
+      }
+
+      .size-option69 {
+        width: 160px;
+      }
+
+      .ani-option70 {
+        left: 400px;
+        animation-delay: 20.3s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option70 {
+        width: 140px;
+      }
+
+      .ani-option71 {
+        left: 300px;
+        animation-delay: 20.6s;
+        animation-duration: 7.0s;
+        z-index: 7;
+      }
+
+      .size-option71 {
+        width: 140px;
+      }
+
+      .ani-option72 {
+        left: 550px;
+        animation-delay: 21.2s;
+        animation-duration: 6.0s;
+      }
+
+      .size-option72 {
+        width: 200px;
+        z-index: 8;
+      }
+
+      .ani-option73 {
+        left: 0px;
+        animation-delay: 21.5s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option73 {
+        width: 200px;
+      }
+
+      .ani-option74 {
+        left: 800px;
+        animation-delay: 21.8s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option74 {
+        width: 140px;
+      }
+
+      .ani-option75 {
+        left: 600px;
+        animation-delay: 22.1s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option75 {
+        width: 160px;
+      }
+
+      .ani-option76 {
+        left: 200px;
+        animation-delay: 22.4s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option76 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option77 {
+        left: 700px;
+        animation-delay: 22.7s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option77 {
+        width: 200px;
+      }
+
+      .ani-option78 {
+        left: 400px;
+        animation-delay: 23.0s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option78 {
+        width: 140px;
+      }
+
+      .ani-option79 {
+        left: 300px;
+        animation-delay: 23.3s;
+        animation-duration: 6.0s;
+        z-index: 6;
+      }
+
+      .size-option79 {
+        width: 200px;
+      }
+
+      .ani-option80 {
+        left: 800px;
+        animation-delay: 23.6s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option80 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option81 {
+        left: 100px;
+        animation-delay: 23.9s;
+        animation-duration: 6.5s;
+        z-index: 7;
+      }
+
+      .size-option81 {
+        width: 160px;
+      }
+
+      .ani-option82 {
+        left: 400px;
+        animation-delay: 24.2s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option82 {
+        width: 140px;
+      }
+
+      .ani-option83 {
+        left: 300px;
+        animation-delay: 24.5s;
+        animation-duration: 7.0s;
+        z-index: 7;
+      }
+
+      .size-option83 {
+        width: 140px;
+      }
+
+      .ani-option84 {
+        left: 600px;
+        animation-delay: 24.8s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option84 {
+        width: 140px;
+      }
+
+      .ani-option85 {
+        left: 900px;
+        animation-delay: 25.1s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option85 {
+        width: 140px;
+      }
+
+      .ani-option86 {
+        left: 200px;
+        animation-delay: 25.4s;
+        animation-duration: 6.5s;
+      }
+
+      .size-option86 {
+        width: 160px;
+        z-index: 8;
+      }
+
+      .ani-option87 {
+        left: 700px;
+        animation-delay: 25.7s;
+        animation-duration: 6.0s;
+        z-index: 7;
+      }
+
+      .size-option87 {
+        width: 200px;
+      }
+
+      .ani-option88 {
+        left: 400px;
+        animation-delay: 26.0s;
+        animation-duration: 6.5s;
+        z-index: 6;
+      }
+
+      .size-option88 {
+        width: 160px;
+      }
+
+      .ani-option89 {
+        left: 150px;
+        animation-delay: 26.3s;
+        animation-duration: 7.0s;
+        z-index: 6;
+      }
+
+      .size-option89 {
+        width: 140px;
+      }
+
+      @keyframes slide-in-top {
+        0%{
+          -webkit-transform: translateY(-1000px);
+          transform: translateY(-1000px);
+        }
+        100%{
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

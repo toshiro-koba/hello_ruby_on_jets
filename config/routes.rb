@@ -1,6 +1,8 @@
 Jets.application.routes.draw do
-  get 'greetings', to: 'greetings#index'
-  root "jets/public#show"
+  # get 'greetings', to: 'greetings#index'
+  root "greetings#index"
+  # root to: 'pictures#index'
+
 
   # The jets/public#show controller can serve static utf8 content out of the public folder.
   # Note, as part of the deploy process Jets uploads files in the public folder to s3
