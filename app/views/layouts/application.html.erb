@@ -30,7 +30,23 @@
       }
 
       input[type='checkbox']:checked ~ .main-contents {
+        display: block;
+      }
+
+      input[type='checkbox']:checked ~ .open {
         display: none;
+      }
+
+      .main-contents {
+        display: none;
+      }
+
+      .start-screen {
+        max-width: 600px;
+        width: calc(100vw - 60px);
+        height: 400px;
+        background-color: #006F8E;
+        margin: 30px auto;
       }
 
       .ani-option0 {
