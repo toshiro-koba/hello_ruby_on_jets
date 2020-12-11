@@ -1,6 +1,13 @@
 Jets.application.routes.draw do
   # get 'greetings', to: 'greetings#index'
   root "greetings#index"
+
+  resources :greetings, only: [] do
+    collection do
+      get 'search'
+    end
+  end
+
   # root to: 'pictures#index'
 
 
