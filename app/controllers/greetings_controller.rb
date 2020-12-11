@@ -6,14 +6,14 @@ class GreetingsController < ApplicationController
 
   # ９０枚の検索結果を取得
   def search
-    photos = []
+    @photos = []
     3.times do |i|
-      search_results = Unsplash::Photo.search("cats", page = (i+1), per_page = 30)
+      search_results = Unsplash::Photo.search(params[:keyword], page = (i+1), per_page = 30)
       search_results.each do |photo|
-        photos << photo
+        @photos << photo
       end
     end
-    return photos
+    @photos = random if @photos.size == 0
   end
 
   def random

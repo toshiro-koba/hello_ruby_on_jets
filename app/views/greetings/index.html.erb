@@ -1,5 +1,9 @@
 <input id='menu' type='checkbox' />
 <div class='start-screen'>
+  <%= form_with(url: search_greetings_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder:"キーワードを入力"%>
+    <%= form.submit "検索", type: "hidden", class: "search-btn" %>
+  <% end %>
   <label for='menu' class='open' >
     <div class='start-btn'>
       <%= 'START' %>

@@ -1,0 +1,10 @@
+<div class='search-contents'>
+  <% photos = @photos%>
+  <% photos.each_with_index do |photo , n| %>
+  <div class='at-container'>
+    <div class='at-item ani-option<%="#{n}"%>'>
+      <%=  image_tag photo.urls.thumb ,class: "size-option#{n}", style: 'opacity: unset;' %> 
+    </div>
+  </div>
+  <% end %>
+</div>
