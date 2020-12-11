@@ -22,4 +22,4 @@ end
 
 gem 'unsplash'
 
-gem 'pry-rails'
+# gem 'pry-rails'
