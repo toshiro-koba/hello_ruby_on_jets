@@ -21,5 +21,3 @@ group :test do
 end
 
 gem 'unsplash'
-
-gem 'bootstrap'
