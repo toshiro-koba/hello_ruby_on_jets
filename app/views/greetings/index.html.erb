@@ -1,14 +1,20 @@
 <input id='menu' type='checkbox' />
 <div class='start-screen'>
+  <div class='app-title'>
+    <%= 'Eureka' %>
+  </div>
   <%= form_with(url: search_greetings_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder:"キーワードを入力"%>
-    <%= form.submit "検索", type: "hidden", class: "search-btn" %>
+    <%= form.text_field :keyword, placeholder:"keyword", class: "search-input" %>
+    <%= form.submit "search", class: "search-btn" %>
   <% end %>
   <label for='menu' class='open' >
     <div class='start-btn'>
       <%= 'START' %>
     </div>
   </label>
+  <div class='icon-space'>
+    <img alt="Eureka-icon" src="http://flat-icon-design.com/f/f_object_169/s512_f_object_169_2bg.png", class='eureka-icon' />
+  </div>
 </div>
 
   
