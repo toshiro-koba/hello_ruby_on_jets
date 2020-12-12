@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ImageFalling</title>
+    <title>Eureka</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <style type="text/css" media="screen" charset="utf-8">
+      .app-title {
+        font-size: 71px;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+      }
+
+      .icon-space {
+        top: 10px;
+        left: 350px;
+        position: relative;
+      }
+
+      .eureka-icon {
+        width: 250px;
+      }
+
       body {
         overflow: hidden;
       }
@@ -45,8 +61,27 @@
         max-width: 600px;
         width: calc(100vw - 60px);
         height: 400px;
-        background-color: #006F8E;
+        background-color: #f7f1ae;
         margin: 30px auto;
+      }
+
+      .search-form {
+        width: 100px;
+        height: 30px;
+        position: relative;
+        top: 200px;
+        z-index: 1;
+        margin: 0 65px 0 232px;
+        color: #fff;
+        display: flex;
+      }
+
+      .search-input {
+        width: 100px;
+      }
+
+      .search-btn {
+        color: #fff;
       }
 
       .start-btn {
@@ -54,7 +89,7 @@
         height: 30px;
         background-color: #333;
         position: relative;
-        top: 300px;
+        top: 213px;
         margin: 0 auto;
         color: #fff;
         text-align: center;
